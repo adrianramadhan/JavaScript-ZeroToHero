@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konversi String dan Number</title>
+  </head>
+  <body>
+    <script>
+      // parseInt : Function untuk mengkonversi string kedalam bentuk Int
+      // parseFloat : Function untuk mengkonversi string kedalam bentuk Float
+      // Number : Function untuk mengkonversi string kedelam bentuk Number yang absolut (tidak boleh ada selain angka di dalam string)
+      const value1 = parseInt("1");
+      const value2 = 1;
+      sum = value1 + value2;
+
+      document.writeln(`<p>${sum}</p>`);
+
+      document.writeln(`<p>${parseInt("1.1")}</p>`);
+      document.writeln(`<p>${parseFloat("1.1")}</p>`);
+      document.writeln(`<p>${Number("1.1")}</p>`);
+
+      const a = 1;
+      const b = 1;
+      const total = a.toString() + b.toString();
+      document.writeln(`<p>${total}</p>`);
+
+      // NaN : Not a Number
+      document.writeln(`<p>${parseInt("1Adrian")}</p>`);
+      document.writeln(`<p>${parseFloat("1.1Adrian")}</p>`);
+
+      document.writeln(`<p>${Number("1Adrian")}</p>`);
+      document.writeln(`<p>${Number("1.1Adrian")}</p>`);
+      document.writeln(`<p>${Number("salah")}</p>`);
+
+      const first = Number("salah"); // NaN
+      const totalNumber = first + 100;
+      document.writeln(`<p>${totalNumber}</p>`);
+
+      // Function isNaN
+      document.writeln(`<p>${isNaN("Fisrt")}</p>`);
+      document.writeln(`<p>${isNaN("100")}</p>`);
+    </script>
+  </body>
+</html>

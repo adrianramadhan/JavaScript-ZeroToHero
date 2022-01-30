@@ -1,0 +1,39 @@
+<!-- Array adalah tipe data yang berisikan kumpulan data -->
+<!-- Array di JS & PHP bersifat dinamis -->
+<!-- Kita bisa memassukan Array kedalam Array -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      // Setiap data di array akan berurutan & urutan datanya dimulai dari 0
+      // Urutan di Array, disebut Index
+      let arrayKosong = [];
+
+      let arrayNama = ["Adrian", "Ramadhan"];
+
+      // Function .push untuk menambahkan Array
+      const names = [];
+      names.push("Adrian");
+      names.push("Ramadhan");
+      // untuk menampilkan data dalam bentuk tabel di dalam Console
+      console.table(names);
+
+      console.info(names[0]);
+      console.info(names[1]);
+
+      names[1] = "Programmer";
+      console.table(names);
+
+      names.push([1, 2, 3, 4, 5]);
+      names.push(["Nabil", "Rakha", "Zaki"]);
+      console.table(names);
+    </script>
+  </body>
+</html>
