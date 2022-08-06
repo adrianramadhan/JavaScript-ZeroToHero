@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise Static Method</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>ID : <label id="id"></label></td>
+        </tr>
+        <tr>
+          <td>Name : <label id="name"></label></td>
+        </tr>
+        <tr>
+          <td>Price : <label id="price"></label></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      // Promise juga memiliki beberapa Static Method
+      // Promise.all() digunakan untuk mengeksekusi beberapa promise sekaligus dan menunggu semua hasil promise-nya
+      // Promise.any() digunakan untuk mengeksekusi beberapa promise sekaligus dan mengambil hasil promise paling cepat
+      // Dan lain-lain
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods
+      function getProduct(product) {
+        return new Promise(function (resolve, reject) {
+          const ajax = new XMLHttpRequest();
+          ajax.open("GET", `../api/${product}.json`);
+          ajax.onload = function () {
+            if (ajax.status === 200) {
+              resolve(ajax.responseText);
+            } else {
+              reject(`Error ${ajax.status}`);
+            }
+          };
+          ajax.send();
+        });
+      }
+
+      const promise = Promise.any([
+        getProduct("product1"),
+        getProduct("product2"),
+        getProduct("product3"),
+      ]);
+
+      promise.then(function (products) {
+        console.log(products);
+      });
+    </script>
+  </body>
+</html>

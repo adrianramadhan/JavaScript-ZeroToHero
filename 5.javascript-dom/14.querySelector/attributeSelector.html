@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attribute Selector</title>
+  </head>
+  <body>
+    <ul>
+      <li class="adrian">Adrian</li>
+      <li class="putra">Putra</li>
+      <li class="ramadhan">Ramadhan</li>
+    </ul>
+    <script>
+      // Attribute Selector merupakan selector yang bisa digunakan untuk menyeleksi element berdasarkan attribute-nya
+      // Kita bisa menggunakan selektor [attribute]
+      // Atau bisa juga untuk tag tertentu, misal menggunakan selektor div[attribute]
+      const elements = document.querySelectorAll("[class]");
+      console.log(elements);
+    </script>
+  </body>
+</html>

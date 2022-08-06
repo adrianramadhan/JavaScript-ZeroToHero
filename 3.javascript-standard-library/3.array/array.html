@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+      // Sebelumnya kita biasa menggunakan for in dan for of untuk melakukan iterasi Array, namun Array juga memiliki method yang bernama forEach()
+      // Method forEach bisa digunakan juga untuk melakukan iterasi data Array
+      {
+        //array loop
+        const array = ["Adrian", "Putra", "Ramadhan"];
+        array.forEach(function (value, index) {
+          console.log(`${index} : ${value}`);
+        });
+
+        array.forEach((value, index) => console.log(`${index} : ${value}`));
+
+        array.forEach((value) => console.log(value));
+      }
+
+      // Array Queue
+      // Dalam struktur data, terdapat tipe struktur data bernama Queue (Antrian)
+      // Dimana adata masuk akan diposisikan di urutan paling belakang
+      // Sedangkan data keluar akan diposisikan di urutan paling depan
+      // Mirip sekali dengan antrian
+      // Kita bisa menggunakan Array dengan function push() untuk menambahkan data di belakang, dan shift() untuk mengambi dan menghapus data paling depan
+      // bersifat FiFO(first in first out)
+      {
+        const queue = [];
+        queue.push("Adrian");
+        queue.push("Putra");
+        queue.push("Ramadhan");
+
+        console.log(queue.shift());
+        console.log(queue.shift());
+        console.log(queue.shift());
+        console.log(queue.shift());
+      }
+
+      // Array Stack
+      // Struktur data Stack (Tumpukan) kebalkan dari Queue, dimana aturannya mirip dengan tumpukan kartu
+      // Saat kita memasukkan data, kita akan memasukkan di urutan paling belakang
+      // Sedangkan saat kita mengambil data, kita akan mengambil data dari paling belakang (atau atas) terlebih dahulu
+      // Untuk menambah diurutan paling belakang kita bisa menggunakan function push()
+      // Dan untuk menghapus data paling belakang kita bisa munggunakan function pop()
+      // Bersifat LIFO(last in first out)
+      {
+        const stack = [];
+        stack.push("Adrian");
+        stack.push("Putra");
+        stack.push("Ramadhan");
+
+        console.log(stack.pop());
+        console.log(stack.pop());
+        console.log(stack.pop());
+        console.log(stack.pop());
+      }
+
+      // Array Search
+      {
+        const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+        console.log(source.find((value) => value > 3));
+        console.log(source.findIndex((value) => value > 3));
+        console.log(source.includes(7));
+        console.log(source.indexOf(5));
+        console.log(source.lastIndexOf(5));
+      }
+
+      // Array Filter
+      {
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const ganjil = numbers.filter((value) => value % 2 === 1);
+        const genap = numbers.filter((value) => value % 2 === 0);
+
+        console.log(numbers);
+        console.log(ganjil);
+        console.log(genap);
+
+        console.log("Ganjil");
+        ganjil.forEach(function (value, index) {
+          console.log(`${index} : ${value}`);
+        });
+
+        console.log("Genap");
+        genap.forEach((value, index) => console.log(`${index} : ${value}`));
+      }
+
+      // Array Transform
+      // Digunakan untuk melakukan Transformasi
+      {
+        const names = "Adrian Putra Ramadhan".split(" ");
+        console.log(names.map((value) => value.toUpperCase()));
+        names.forEach((value) => console.log(value));
+
+        const namesReduce = names.reduce(
+          (before, value) => before + " " + value
+        );
+        const namesReduceRight = names.reduceRight(
+          (before, value) => before + " " + value
+        );
+        console.log(namesReduce);
+        console.log(namesReduceRight);
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.log(numbers.reduce((result, value) => result + value));
+        console.log(numbers.reduceRight((result, value) => result + value));
+      }
+    </script>
+  </body>
+</html>

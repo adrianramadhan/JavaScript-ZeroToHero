@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+  </head>
+  <body>
+    <script>
+      // JavaScript memiliki tipe data untuk representasi waktu dan tanggal, yaitu DATE
+      // Date merupakan representasi milisecond sejak tanggal 1 januari 1970, atau dikenal dengan Epoch & Unix Timestamp
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+      {
+        // Create date
+
+        const date = new Date();
+        console.log(date);
+
+        const date2 = new Date(2021, 10, 10);
+        console.log(date2);
+
+        const date3 = new Date(2021, 10, 10, 16, 15, 9, 123);
+        console.log(date3);
+
+        const date4 = new Date(1655812484036);
+        console.log(date4);
+      }
+
+      // Dalam menggunakan tipe data waktu, biasanya disemua bahasa pemrograman akan mendukung yang namanya epoch & unix timestamp
+      // Epoch & Unix timestamp merupakan hitungan milisecond setelah tanggal 1 Januari 1970
+      // JavaScript pun mendukung pembuatan waktu dalam bentuk epoch dan unix timestamp, kita bisa menggunakan Date.now()
+      // Untuk mengubah dari object date ke epoch & unix timestamp, kita bisa menggunakan function getTime()
+      {
+        const date = new Date();
+        console.log(date.getTime());
+
+        const date2 = new Date(2021, 10, 10);
+        console.log(date2.getTime());
+
+        const date3 = new Date(2021, 10, 10, 16, 15, 9, 123);
+        console.log(date3.getTime());
+
+        const date4 = new Date(1655812484036);
+        console.log(date4.getTime());
+
+        console.log(Date.now());
+      }
+
+      // Parsing Date
+      // Kita juga bisa melakukan parsing membuat date daru string menggunakan Date.parse(value)
+      // Format string harus YYYY-MM-DDTHH:mm:ss.sssZ
+      // Dimana jika kita hanya membuat date berisi tanggal saya, kita cukup gunakan YYYY-MM-DD
+      // Jika date dengan tanggal dan waktu, gunakan YYYY-MM-DDTHH:mm:ss.sss
+      // Jika date dengan tanggal, waktu, dan timezone, gunakan YYYY-MM-DDTHH:mm:ss.sssZ
+      // Hasil parsing adalah unix timestamp, bukan object date
+      {
+        // date parsing
+
+        const time = Date.parse("2020-10-10T08:45:45.123+07:00");
+        console.log(time);
+
+        const date = new Date(time);
+        console.log(date);
+      }
+
+      // Date Getter dan Setter
+      // Date juga memiliki banyak sekali method untuk mendapatkan informasi date dan juga mengubah informasi date, atau istilahnya adalah getter dan setter
+
+      {
+        // Getter dan Setter
+
+        const date = new Date();
+        date.setFullYear(2021);
+        console.log(date);
+
+        console.log(date.getFullYear());
+        console.log(date.getMonth());
+        console.log(date.getDate());
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+        console.log(date.getMilliseconds());
+        console.log(date.getTimezoneOffset());
+      }
+    </script>
+  </body>
+</html>

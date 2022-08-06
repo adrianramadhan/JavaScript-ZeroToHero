@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set</title>
+  </head>
+  <body>
+    <script>
+      // Set
+      // Set merupakan implementasi dari struktur data yang berisikan data-data unique
+      // Set mirip seperti Array, hanya saja isi datanya selalu unique
+      // Jika kita menambahkan data yang sama, maka data hanya akan diterima satu saja
+      // Set mengimplementasikan kontrak iterable, sehingga bisa diiterasi secara default
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+      const set = new Set();
+      set.add("Adrian");
+      set.add("Putra");
+      set.add("Ramadhan");
+
+      console.log(set);
+      set.forEach((value) => console.log(value));
+      console.log(set.has("Adrian"));
+    </script>
+  </body>
+</html>

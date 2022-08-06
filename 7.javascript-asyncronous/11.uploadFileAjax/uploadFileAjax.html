@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload File dengan Ajax</title>
+  </head>
+  <body>
+    <h1>Register</h1>
+    <form>
+      <label for="username"
+        >Username : <input type="text" name="username" id="username"
+      /></label>
+      <br />
+      <label for="password"
+        >Name : <input type="text" name="name" id="name"
+      /></label>
+      <br />
+      <input type="file" name="file" id="file" />
+      <br />
+      <input type="button" value="Register" id="register" />
+    </form>
+    <script>
+      // Selain menggunakan JSON, Query Param, Form, kadang kita butuh mengirim file ke server
+      // Untuk mengirim file ke Server, kita perlu menggunakan object Form Data, lalu kita perlu menambahkan object File ke dalam FormData tersebut
+      // https://developer.mozilla.org/en-US/docs/Web/API/FormData
+      // https://developer.mozilla.org/en-US/docs/Web/API/File
+      // https://developer.mozilla.org/en-US/docs/Web/API/FileList
+      // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
+      function doRegister() {
+        const ajax = new XMLHttpRequest();
+        ajax.open("POST", "https://eoko29l4mezm18p.m.pipedream.net/");
+        ajax.onload = function () {
+          console.log("Database Connect");
+        };
+        const form = new FormData();
+        form.append("username", document.getElementById("username").value);
+        form.append("name", document.getElementById("name").value);
+
+        const files = document.getElementById("file").files;
+        const firstFile = files.item(0);
+        form.append("profile", firstFile);
+        ajax.send(form);
+      }
+
+      function doLogin() {
+        const ajax = new XMLHttpRequest();
+        ajax.open("POST", "https://eoko29l4mezm18p.m.pipedream.net/");
+        ajax.onload = function () {
+          const header = document.getElementById("header");
+          header.textContent = ajax.responseText;
+          console.log("Sukses");
+        };
+        ajax.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        const form = new URLSearchParams();
+        form.append("username", document.getElementById("username").value);
+        form.append("password", document.getElementById("password").value);
+        ajax.send(form);
+      }
+
+      document.getElementById("register").onclick = doRegister;
+    </script>
+  </body>
+</html>

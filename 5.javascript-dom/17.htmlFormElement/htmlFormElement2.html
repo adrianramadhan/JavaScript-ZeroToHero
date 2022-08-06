@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Form Element 2</title>
+  </head>
+  <body>
+    <form name="commentForm">
+      <label for="comment">
+        Comment : <input id="comment" type="text" name="comment" />
+      </label>
+      <br />
+      <label for="from">
+        From : <input type="text" name="from" id="from" />
+      </label>
+      <br />
+      <input type="submit" value="submit" />
+    </form>
+    <div id="commentList"></div>
+    <script>
+      // Form adalah salah satu element yang memiliki banyak sekali fitur diluar dari Element DOM
+      // Hal ini karna penggunaan Form memang lebih kompleks dibandingkan HTML lainnya
+      // Ada banyak sekali property, moethod dan juga event yang terdapat pada HTML form element atau input element
+      // https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement
+      // https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement
+      document.forms["commentForm"].onsubmit = function (event) {
+        event.preventDefault();
+
+        const commentList = document.getElementById("commentList");
+        const comment = document.forms["commentForm"]["comment"].value;
+        const from = document.forms["commentForm"]["from"].value;
+
+        const commentItem = document.createElement("P");
+        commentItem.textContent = `${comment} - ${from}`;
+        commentList.appendChild(commentItem);
+
+        document.forms["commentForm"].reset();
+      };
+    </script>
+  </body>
+</html>

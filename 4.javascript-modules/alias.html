@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alias</title>
+  </head>
+  <body>
+    <script type="module">
+      import {
+        company as perusahaan,
+        sum as total,
+        Company as Perusahaan,
+      } from "./script/alias.js";
+      console.log(perusahaan);
+      console.log(total(2, 2));
+
+      const company = new Perusahaan();
+      company.companyProfile("Build With Ryan");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window</title>
+  </head>
+  <body>
+    <p id="content"></p>
+    <p id="location"></p>
+    <script>
+      // Window merupakan representasi window yang berisikan DOM Document
+      // Beberapa JavaScript function sebenarnya berasal dari object Window, seperti alert(), confirm(), dan prompt()
+      // Ada banyak sekali property, method, dan event yang bisa kita gunakan pada window
+      // Untuk menggunakan Window, kita tidak perlu membuat objectnya, cukup gunakan kata kunci window
+      // https://developer.mozilla.org/en-US/docs/Web/API/Window
+      const content = document.getElementById("content");
+      const lokasi = document.getElementById("location");
+
+      const width = window.screen.width;
+      const height = window.screen.height;
+      const url = window.location;
+
+      content.textContent = `Window with : ${width} X height : ${height}`;
+      lokasi.textContent = `${url}`;
+    </script>
+  </body>
+</html>

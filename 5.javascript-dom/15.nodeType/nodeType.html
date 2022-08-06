@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node Type</title>
+  </head>
+  <body>
+    Adrian Ramadhan
+    <!-- Hello World -->
+    <script>
+      // Saat kita menyeleksi Node menjadi NodeList, kadang kita ingin tahu tipe Node tersebut
+      // Apakah Element, TextElement atau yang lainnya
+      // Node sendiri memiliki property bernama nodeType, dimana kita bisa melihat tipe dari node
+      // https://developer.mozilla.org/en-US/docs/Web/API/Node
+      const nodes = document.body.childNodes;
+      nodes.forEach((nodes) => {
+        console.log(`${nodes} : ${nodes.nodeType}`);
+      });
+
+      for (const node of nodes) {
+        console.log(`${node} : ${node.nodeType}`);
+      }
+    </script>
+  </body>
+</html>

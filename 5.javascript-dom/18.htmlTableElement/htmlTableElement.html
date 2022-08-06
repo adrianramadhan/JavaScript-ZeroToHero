@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Table Element</title>
+  </head>
+  <body>
+    <table id="orderRevenue" border="1">
+      <caption>
+        Order Revenue
+      </caption>
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Income</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>January</td>
+          <td>100000000</td>
+        </tr>
+        <tr>
+          <td>February</td>
+          <td>200000000</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td>300000000</td>
+        </tr>
+      </tfoot>
+    </table>
+    <script>
+      // Salah satu HTML Element yang kompleks selain Form adalah Table
+      // HTML Table Element juga memiliki banyak sekali property, method dan event yang khusus
+      // https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement
+      const orderRevenue = document.getElementById("orderRevenue");
+      console.log(orderRevenue.caption.innerText);
+      console.log(orderRevenue.tHead.innerText);
+      console.log(orderRevenue.tBodies);
+      console.log(orderRevenue.tFoot.innerText);
+    </script>
+  </body>
+</html>

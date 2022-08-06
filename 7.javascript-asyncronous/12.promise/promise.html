@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <h1 id="statusSuccess" style="color: rgb(56, 188, 118)"></h1>
+    <h1 id="statusError" style="color: rgb(195, 34, 34)"></h1>
+    <script>
+      // Promise merupakan proxy untuk sebuah nilai di masa depan (Future) yang belum diketahui saat pembuatan Promise tersebut
+      // Biasa Promise digunakan sebagai proxy untuk proses Async
+      // Pengunaan Promise sangat mudah, dan lebih mirip dengan kode Synchronous
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+      const promise = new Promise(function (resolve, reject) {
+        const ajax = new XMLHttpRequest();
+        ajax.open("GET", "../api/product.json");
+        ajax.onload = function () {
+          if (ajax.status === 200) {
+            const statusSuccess = document.getElementById("statusSuccess");
+            statusSuccess.textContent = "SUKSES!!!";
+            resolve(ajax.statusText);
+          } else {
+            const statusError = document.getElementById("statusError");
+            statusError.textContent = `Code Error ${ajax.statusText}`;
+            reject(`Code Error ${ajax.statusText}`);
+          }
+        };
+        ajax.send();
+      });
+    </script>
+  </body>
+</html>

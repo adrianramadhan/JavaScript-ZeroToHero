@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This</title>
+  </head>
+  <body>
+    <script>
+      // Kata kunci this adalah referensi ke object milik siapa
+      // Tiap lokasi kata kunci this, bisa berbeda-beda referensi pemilik-nya
+      // Dalam Object Method, this merupakan referensi ke object pemilik function-nya
+      // Di global scope, this merupakan referensi ke global object
+      // Dalam function, this merupakan referensi ke global object
+      // Di function dengan strict mode, this adalah undefined
+      // Dalam event, this merupakan referensi ke element yang menerima event
+      console.log(this);
+
+      const person = {
+        name: "Luthfi",
+        sayHello: function (value) {
+          console.log(`Hello ${this.name} my name is ${value}`);
+        },
+      };
+
+      person.sayHello("Adrian");
+      person.sayHello("Nabil");
+    </script>
+  </body>
+</html>

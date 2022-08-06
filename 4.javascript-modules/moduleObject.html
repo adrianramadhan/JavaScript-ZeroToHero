@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module Object</title>
+  </head>
+  <body>
+    <script type="module">
+      import * as Object from "./script/moduleObject.js";
+      console.log(Object);
+      console.log(Object.firstName);
+      console.log(Object.middleName);
+      console.log(Object.lastName);
+      Object.hello();
+      const person = new Object.Person();
+      console.log(person.name);
+    </script>
+  </body>
+</html>

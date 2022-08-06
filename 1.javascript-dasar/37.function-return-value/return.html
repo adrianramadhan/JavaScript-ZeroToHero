@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Return Value</title>
+  </head>
+  <body>
+    <script>
+      // Secara default, function itu tidak menghasilkan value apapun, namun jika kita ingin, kita bisa membuat sebuah function mengembalikan value
+      // Agar function bisa menghasilkan value, kita bisa menggunakan kata kunci return di dalam function nya
+      // Dan di dalam block function, untuk menghasilkan nilai tersebut, kita harus menggunakan kata kunci return, lalu diikuti dengan data yang ingin kita hasilkan
+      // Function hanya bisa menembalikan satu data, jika kita ingin mengembalikan beberapa data sekaligus, kita bisa menggunakan Array sebagai return value nya
+      function sayHello(firstName, lastName) {
+        say = `Hello ${firstName} ${lastName}`;
+        return say;
+      }
+
+      document.writeln(`<p>${sayHello("Adrian", "Ramadhan")}</p>`);
+
+      function getFinalScore(value) {
+        if (value > 89) {
+          return "A";
+        } else if (value > 79) {
+          return "B";
+        } else if (value > 69) {
+          return "C";
+        } else return "D";
+      }
+      const a = 90;
+      const result = getFinalScore(a);
+      document.writeln(
+        `<p>Kamu mendapatkan nilai ${a} dengan predikat ${result}</p>`
+      );
+
+      function isContaint(array, searchValue) {
+        for (const element of array) {
+          console.log(`Iterasi Element ${element}`);
+          if (element === searchValue) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      const array = [53, 27, 89, 45, 23, 46, 246, 72, 54, 277, 45, 246, 12, 45];
+      const search = 246;
+      const found = isContaint(array, search);
+      document.writeln(`<p>${found}</p>`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NodeList</title>
+  </head>
+  <body>
+    <div id="menu1">
+      <ul>
+        <li id="first">first</li>
+        <li id="second">second</li>
+        <li id="third">third</li>
+      </ul>
+    </div>
+    <div id="menu2">
+      <ul>
+        <li>Adrian</li>
+        <li>Putra</li>
+        <li>Ramadhan</li>
+      </ul>
+    </div>
+    <script>
+      // NodeList adalah kumpulan dari Node
+      // Biasanya NodeList digunakan ketika kita menyeleksi banyak Node sekaligus, misal ketika kita ingin mengambil semua children di Node misalnya
+      // https://developer.mozilla.org/en-US/docs/Web/API/NodeList
+      const list = document.querySelectorAll("li");
+      console.log(list);
+
+      const menu1 = document.getElementById("menu1").childNodes;
+      console.log(menu1);
+
+      const menu2 = document.getElementById("menu2").childNodes;
+      console.log(menu2);
+    </script>
+  </body>
+</html>

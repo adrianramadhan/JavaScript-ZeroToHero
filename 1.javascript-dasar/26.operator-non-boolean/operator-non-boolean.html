@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator Logika Non Boolean</title>
+  </head>
+  <body>
+    <script>
+      // Operator OR
+      // Membaca dari kiri ke kanan
+      // Operator ini akan mengabil nilai pertama yang Truthy
+      // Jika nilai pertama falsy maka diambil nilai kedua yang truhy
+      // Jika keduanya false maka yang diambil nilai terakhirnya
+      console.info("Operator OR ||");
+      console.info("Hello" || "");
+      console.info("" || []);
+      console.info("0" || "NOL");
+      console.info(0 || "NOL");
+      console.info(null || "NULL");
+      console.info(undefined || "UNDEFINED");
+      console.info(0 || false);
+
+      const person = {
+        fisrtName: "Adrian",
+        lastName: "Ramadhan",
+      };
+
+      nama = person.fisrtName || person.lastName;
+      console.log(nama);
+
+      // Operator AND
+      // Membaca dari kiri ke kanan
+      // Mengambil nilai pertama yang falshy
+      // Jika tidak ada yang falshy maka nilai terakhir yang diambil
+      console.info("Operator AND &&");
+      console.info("Hello" && "");
+      console.info("" && []);
+      console.info("0" && "NOL");
+      console.info(0 && "NOL");
+      console.info(null && "NULL");
+      console.info(undefined && "UNDEFINED");
+      console.info(0 && false);
+
+      name = person.fisrtName && person.lastName;
+      console.log(name);
+    </script>
+  </body>
+</html>

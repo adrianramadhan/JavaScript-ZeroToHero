@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch API</title>
+  </head>
+  <body>
+    <form>
+      <img src="" alt="" />
+      <label for="username"
+        >Username : <input type="text" id="username" name="username"
+      /></label>
+      <br />
+      <label for="password"
+        >Password : <input type="password" id="password" name="password"
+      /></label>
+      <br />
+      <input type="button" value="Send" id="submitButton" />
+    </form>
+    <h1 id="responseSuccess" style="color: rgb(22, 165, 22)"></h1>
+    <h1 id="responseError" style="color: rgb(190, 57, 57)"></h1>
+    <script>
+      // Fetch API merupakan fitur baru sebagai alternatif AJAX
+      // Saat menggunakan AJAX, kita perlu menggunakan Callback untuk menerima response atau data dari Server, sedangkan Fetch API sudah menggunakan Promise, sehingga pengunaan Fetch API lebih mudah dibandingkan AJAX
+      // Hampir semua browser modern sekarang sudah menggunakan Fetch API
+      // Apa yang bisa kita lakukan di AJAX, bisa juga kita lakukan di Fetch API
+      // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+      // Request
+      // Saat kita akan mengirim request menggunakan Fetch API, kita perlu membuat object request
+      // Hal ini menjadi lebih rapi dibandingkan menggunakan AJAX
+      // Kita bisa membuat object Request, lalu dikirim menggunakan Fetch API
+      // Dan saat membuat Request, kita bisa menentukan data yang ingin kita kirim
+      // https://developer.mozilla.org/en-US/docs/Web/API/Request
+      // https://eoko29l4mezm18p.m.pipedream.net/
+      function doLogin() {
+        const request = new Request(
+          "https://eoko29l4mezm18p.m.pipedream.net/",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              username: document.getElementById("username").value,
+              password: document.getElementById("password").value,
+            }),
+          }
+        );
+
+        // Mengirim Data dengan Fetch API
+        // Promise<Response>
+        const response = fetch(request);
+
+        response
+          .then((request) => request.json())
+          .then(function (json) {
+            document.getElementById("responseSuccess").textContent =
+              json.success;
+          })
+          .catch(function (error) {
+            document.getElementById("responseError").textContent = error;
+          });
+      }
+
+      document.getElementById("submitButton").onclick = doLogin;
+    </script>
+  </body>
+</html>

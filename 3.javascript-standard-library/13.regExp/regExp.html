@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>regExp</title>
+  </head>
+  <body>
+    <script>
+      // Regular Exspression
+      // RexExp merupakan implementasi dari regular expression di JavaScript
+      // Regular Expression merupakan fitur untuk mencari text dengan pola
+      // Membuat regular expresssion di JavaScript bisa dilakukan dengan dua cara, yaitu menggunakan literal notation atau membuat object RegExp
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+      {
+        // Create regexp
+        const regex1 = /adrian/;
+        const regex2 = new RegExp("Adrian");
+        const regex3 = new RegExp(/adrian/);
+      }
+      {
+        // Test regexp
+        const name = "Adrian Ramadhan Adrian Putra";
+        const regex = /Adrian/;
+
+        let result = regex.exec(name);
+        console.log(result);
+        console.log(regex.exec("Tidak ada"));
+
+        let test = regex.test(name);
+        console.log(test);
+        console.log(regex.test("Tidak ada"));
+      }
+
+      {
+        // regexp modifier
+        const name = "adrian ramadhan\nadrian putra\nArdian Ramadhan";
+        const regex1 = /^a..ian/gim;
+        const regex2 = /Ramadhan/gi;
+
+        let result;
+        while ((result = regex1.exec(name)) !== null) {
+          console.log(result);
+        }
+
+        while ((result = regex2.exec(name)) !== null) {
+          console.log(result);
+        }
+      }
+
+      {
+        // advanced regex
+        const regex = /ek[aiueo]/gi;
+
+        const name = "eka eki eku eke edo eko";
+        let result;
+        while ((result = regex.exec(name)) !== null) {
+          console.log(result);
+        }
+      }
+
+      {
+        // regex dalam tipe data string
+        const name = "eka eki eku eke edo eko";
+
+        console.log(name.match(/ek[aiueo]/gi)); // Mencari regex yang polan-nya sama
+        console.log(name.search(/ek[aiueo]/gi)); // Mencari index ke berapa yg sesuai regex
+        console.log(name.replace(/ek[aiueo]/gi, "Replace")); // Mereplace data yg sesuai pola
+        console.log(name.split(/e/gi));
+      }
+    </script>
+  </body>
+</html>

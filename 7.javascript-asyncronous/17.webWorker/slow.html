@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slow HTML</title>
+  </head>
+  <body>
+    <button id="buttonTask">Click Me</button>
+    <script>
+      // Web Worker adalah kemampuan yang untuk menjalankan proses di Thread yang berbeda dibanding Main Thread
+      // Keuntungan menggunakan Web Worker adakah, jika terdapat proses yang membutuhkan waktu lama, Web kita tidak akan Freeze, karena proses tersebut bisa kita jalankan di Thread yang berbeda dari Main Thread(yang bisa digunakan oleh UI)
+      // https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API
+      function slowLog(total) {
+        for (let i = 0; i <= total; i++) {
+          console.log(i);
+        }
+      }
+
+      document.getElementById("buttonTask").onclick = function () {
+        console.log("Start");
+        slowLog(prompt("Masukkan Nilai Perulangan : "));
+        console.log("End");
+      };
+    </script>
+  </body>
+</html>

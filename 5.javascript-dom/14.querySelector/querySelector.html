@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Query Selector</title>
+  </head>
+  <body>
+    <script>
+      // Sebenarnya kita sudah menggunakan method querySelectorAll() pada Document, sekarang kita akan bahas lebih lengkap tentang query selector
+      // Query Selector merupakan method untuk menyeleksi node sesuai dengan pola yang kita ingin cari
+      // Terdapat 2 Query Selector
+      // Document.querySelector(pola) digunakan menyeleksi node pertama yang sesuai pola
+      // Document.querySelectorAll(pola) digunakan untuk menyeleksi semua node yang sesuai pola
+      const element = document.querySelectorAll("*");
+      console.log(element);
+    </script>
+  </body>
+</html>

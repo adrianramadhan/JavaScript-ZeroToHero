@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function</title>
+  </head>
+  <body>
+    <script>
+      // Arrow function adalah alternatif pembuatan function yang lebih sederhana dari function biasanya
+      // Namun terdapan limitasi dan tidak bisa dipakai disemua kondisi
+      // Dinamakan arrow function karena menggunakan tanda =>
+      // Berikut kelemahan arrow function : tidak memiliki fitur argument object, tidak bisa menggunakan function generator, tidak bisa mengakses this, tidak bisa mengakses super
+      const sayHello = (name) => {
+        const say = `Hello ${name}`;
+        console.log(say);
+      };
+
+      sayHello("Adrian Ramadhan");
+
+      // Jika sebuah arrow function isinya sederhana, misal hanya satu baris
+      // Kita bisa membuat arrow function tanpa menggunakan block
+      // const sayHelloBlock = (name) => console.log(`Hello ${name}`);
+      const sayHelloBlock = (name) => console.log(`Hello ${name}`);
+      sayHelloBlock("Luthfi Pratama");
+
+      // Arrow function return value
+      // Arrow function bisa mengembalikan value, same seperti function biasanya
+      // Jika menggunakan block, maka kita perlu menggunakan kata kunci return
+      // Jika tidak menggunakan block, kita tidak perlu menggunakan kata kunci return
+      const sum = (first, second) => first + second;
+      console.log(sum(15, 20));
+
+      // Arrow function sebagai parameter
+      // Karena arrow function sama seperti anonymous function
+      // Jadi kita bisa menggunakan arrow function sebagai parameter di function lain
+      function giveMeName(giveName) {
+        giveName("Nabil Rakha");
+      }
+
+      // Anonymous Function
+      //   giveMeName(function (name) {
+      //     console.log(`Hello ${name}`);
+      //   });
+
+      // Arrow Function
+      giveMeName((name) => console.log(`Hello ${name}`));
+    </script>
+  </body>
+</html>

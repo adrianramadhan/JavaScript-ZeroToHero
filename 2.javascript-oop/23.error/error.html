@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error</title>
+  </head>
+  <body>
+    <script>
+      // Saat membuat aplikasi, sudah tentu kita tidak akan terhindar dari yang namanya error
+      // Di JavaScript, error merupakan sesuatu yang sudah standar
+      // Banyak sekali class error di JavaScript, namun semua class error di JavaScript selalu berujung di class Error, artinya class error adalah superclass untuk semua jenis error di JavaScript
+      // Contoh class error : SyntaxError, TypeError, EvalError,dll
+      class MathUtil {
+        static sum(...numbers) {
+          if (numbers.length === 0) {
+            throw new Error("Parameter tidak boleh kosong");
+          }
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+          return total;
+        }
+      }
+      console.log(MathUtil.sum());
+      console.log(MathUtil.sum(1, 1, 1, 1, 1));
+    </script>
+  </body>
+</html>

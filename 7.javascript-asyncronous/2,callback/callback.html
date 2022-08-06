@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback</title>
+  </head>
+  <body>
+    <script>
+      // Callback, merupakan mekanisme untuk memanggil kembali kode yang ada di program daru proses Async
+      // Callback biasanya dibuat dalam bentuk function as parameter, dan parameter tersebut akan dieksekusi saat proses Async selesai
+      // Dengan menggunakan Callback, program bisa menerima informasi yang dibutuhkan dari proses yang berjalan secara Asyncs
+
+      // Async Method
+      // setTimeout(callback, timeInMilis), digunakan untuk menjalankan proses Async sekali dalam waktu terentu
+      // setInterval(callback, timeInMilis), digunakan untuk menjalankan proses Async secara periodik dalam waktu tertentu
+      const addElement = () => {
+        const header = document.createElement("h1");
+        header.textContent = "adrianramadhan.com";
+
+        document.body.appendChild(header);
+      };
+
+      setTimeout(addElement, 5000);
+    </script>
+  </body>
+</html>

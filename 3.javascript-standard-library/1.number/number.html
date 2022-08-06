@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number</title>
+  </head>
+  <body>
+    <script>
+      // Number merupakan function yang digunakan untuk melakukan konversi ke tipe data number
+      // Jika tidak bisa dikonversi ke number, secara otomatis hasilnya adalah NaN
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+      const input = "12345";
+      const number = Number(input);
+      console.log(number);
+      console.log(typeof number);
+      console.log(typeof input);
+
+      // Static Properties
+      console.log(Number.MIN_VALUE);
+      console.log(Number.MAX_VALUE);
+      console.log(Number.MIN_SAFE_INTEGER);
+      console.log(Number.MAX_SAFE_INTEGER);
+      console.log(Number.NaN);
+
+      // Static method
+      const data = Number("123");
+      console.log(Number.isNaN(data));
+      console.log(Number.isInteger(data));
+
+      // Instance method
+      const value = Number("12345");
+      console.log(value.toString(2));
+      console.log(value.toLocaleString("id-ID"));
+      console.log(value.toLocaleString("en-US"));
+    </script>
+  </body>
+</html>

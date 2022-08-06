@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Method</title>
+  </head>
+  <body>
+    <div>
+      <p id="tulisan">Ini adalah Tulisan</p>
+    </div>
+
+    <script>
+      // Document Method
+      // Document memiliki banyak sekali method
+      // banyak method yang terdapat di document digunakan untuk memanipulasi data DOM, misal membuat Node, Element, Attribute atau mengambil dan menyeleksi Node didalm document
+      // https://developer.mozilla.org/en-US/docs/Web/API/Document#methods
+      const tulisan = document.getElementById("tulisan");
+      console.log(tulisan);
+      console.log(tulisan.textContent);
+      console.log(tulisan.outerText);
+      console.log(tulisan.outerHTML);
+    </script>
+  </body>
+</html>

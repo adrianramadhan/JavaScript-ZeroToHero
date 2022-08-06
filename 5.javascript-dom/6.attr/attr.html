@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attribute</title>
+  </head>
+  <body>
+    <img
+      id="logo"
+      src="https://www.programmerzamannow.com/img/pzn.png"
+      alt="PZN-logo"
+    />
+    <script>
+      // Attribute merupakan representasi dari attribute sebuah element, atau singkatnya key-value, key-nya adalah nama attribute, dan value-nya adalah value attribute
+      // https://developer.mozilla.org/en-US/docs/Web/API/Attr
+      const logo = document.getElementById("logo");
+      const src = logo.getAttribute("src");
+      //   const src = logo.getAttributeNode("src");
+
+      console.log(src);
+      //   console.log(src.name);
+      //   console.log(src.value);
+      //   console.log(src.nodeValue);
+    </script>
+  </body>
+</html>
